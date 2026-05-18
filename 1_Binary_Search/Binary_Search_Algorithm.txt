@@ -1,0 +1,23 @@
+Algorithm Binary_Search(A, low, high, key)
+
+Input : Sorted array A
+        low = starting index
+        high = ending index
+        key = element to search
+
+Step 1: while (low <= high)
+
+            mid = (low + high) / 2
+
+            if (A[mid] == key)
+                  return mid
+
+            else if (key < A[mid])
+                  high = mid - 1
+
+            else
+                  low = mid + 1
+
+Step 2: return -1
+
+End

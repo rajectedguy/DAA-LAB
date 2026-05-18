@@ -1,0 +1,29 @@
+Algorithm MaxMin(A, low, high)
+
+Step 1: If low == high
+            max = min = A[low]
+            return
+
+Step 2: If high == low + 1
+
+            if A[low] > A[high]
+                  max = A[low]
+                  min = A[high]
+
+            else
+                  max = A[high]
+                  min = A[low]
+
+            return
+
+Step 3: mid = (low + high) / 2
+
+Step 4: MaxMin(A, low, mid)
+        MaxMin(A, mid+1, high)
+
+Step 5: Compare maximums and minimums
+
+            final_max = greater of both maximums
+            final_min = smaller of both minimums
+
+End
