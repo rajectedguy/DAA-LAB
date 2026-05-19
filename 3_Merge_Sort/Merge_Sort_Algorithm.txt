@@ -1,0 +1,39 @@
+MERGE_SORT(arr, low, high)
+
+1. If low < high then
+2.     mid ← (low + high) / 2
+
+3.     MERGE_SORT(arr, low, mid)
+4.     MERGE_SORT(arr, mid + 1, high)
+
+5.     MERGE(arr, low, mid, high)
+6. End If
+
+
+MERGE(arr, low, mid, high)
+
+1. Create two temporary arrays:
+       Left[] and Right[]
+
+2. Copy elements into Left[] and Right[]
+
+3. i ← 0
+   j ← 0
+   k ← low
+
+4. While i < size of Left[] AND j < size of Right[]
+       If Left[i] ≤ Right[j]
+            arr[k] ← Left[i]
+            i ← i + 1
+       Else
+            arr[k] ← Right[j]
+            j ← j + 1
+       End If
+       k ← k + 1
+   End While
+
+5. Copy remaining elements of Left[] into arr[]
+
+6. Copy remaining elements of Right[] into arr[]
+
+7. Return
