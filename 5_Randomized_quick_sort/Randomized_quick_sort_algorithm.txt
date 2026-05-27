@@ -1,0 +1,34 @@
+RANDOMIZED-QUICKSORT(arr, low, high)
+
+ if low < high
+     pivotIndex = RANDOMIZED-PARTITION(arr, low, high)
+     
+     RANDOMIZED-QUICKSORT(arr, low, pivotIndex - 1)
+     RANDOMIZED-QUICKSORT(arr, pivotIndex + 1, high)
+
+
+
+RANDOMIZED-PARTITION(arr, low, high)
+
+randomIndex = random(low, high)
+
+swap arr[randomIndex] and arr[high]
+
+return PARTITION(arr, low, high)
+
+
+
+PARTITION(arr, low, high)
+
+    pivot = arr[high]
+
+    i = low - 1
+
+    for j = low to high - 1
+        if arr[j] < pivot
+            i = i + 1
+            swap arr[i] and arr[j]
+
+swap arr[i + 1] and arr[high]
+
+return i + 1
