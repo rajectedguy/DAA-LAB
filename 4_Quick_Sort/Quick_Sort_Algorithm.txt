@@ -1,0 +1,20 @@
+QUICKSORT(arr, low, high)
+    if low < high
+        pivotIndex = PARTITION(arr, low, high)
+
+        QUICKSORT(arr, low, pivotIndex - 1)
+        QUICKSORT(arr, pivotIndex + 1, high)
+
+
+PARTITION(arr, low, high)
+    pivot = arr[high]
+    i = low - 1
+
+    for j = low to high - 1
+        if arr[j] < pivot
+            i++
+            swap arr[i] and arr[j]
+
+    swap arr[i + 1] and arr[high]
+
+    return i + 1
