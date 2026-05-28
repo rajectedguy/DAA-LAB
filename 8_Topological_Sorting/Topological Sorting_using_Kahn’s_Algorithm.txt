@@ -1,0 +1,19 @@
+KAHN-TOPOLOGICAL-SORT(G)
+
+1. Compute indegree of all vertices
+
+2. Create an empty queue Q
+
+3. for each vertex v
+4.     if indegree[v] == 0
+5.         enqueue(Q, v)
+
+6. while Q is not empty
+7.     u = dequeue(Q)
+8.     print u
+
+9.     for each adjacent vertex v of u
+10.         indegree[v]--
+
+11.         if indegree[v] == 0
+12.             enqueue(Q, v)
