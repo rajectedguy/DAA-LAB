@@ -1,0 +1,9 @@
+DFS(G, start)
+
+1. Mark start node as visited
+2. Print start node
+
+3. for each adjacent vertex v of start
+4.     if v is not visited
+5.         DFS(G, v)
+
