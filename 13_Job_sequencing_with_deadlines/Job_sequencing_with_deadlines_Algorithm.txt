@@ -1,0 +1,13 @@
+JOB-SEQUENCING(jobs, n)
+
+1. Sort jobs by decreasing profit
+
+2. Create slot array and initialize all slots as empty
+
+3. for each job i
+4.     for j = min(deadline[i], n) - 1 down to 0
+5.         if slot[j] is empty
+6.             assign job i to slot[j]
+7.             break
+
+8. Print selected jobs and total profit
