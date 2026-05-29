@@ -1,0 +1,20 @@
+FRACTIONAL-KNAPSACK(W, items, n)
+
+1. for each item i
+2.     ratio[i] = profit[i] / weight[i]
+
+3. Sort items in decreasing order of ratio
+
+4. totalProfit = 0
+
+5. for i = 0 to n-1
+6.     if weight[i] <= W
+7.         totalProfit = totalProfit + profit[i]
+8.         W = W - weight[i]
+
+9.     else
+10.        fraction = W / weight[i]
+11.        totalProfit = totalProfit + profit[i] * fraction
+12.        break
+
+13. return totalProfit
