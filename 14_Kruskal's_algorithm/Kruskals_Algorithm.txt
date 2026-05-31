@@ -1,0 +1,14 @@
+KRUSKAL(G)
+    MST = empty set
+
+    Sort all edges by weight
+
+    for each vertex v in G
+        Make-Set(v)
+
+    for each edge (u, v) in sorted order
+        if Find(u) != Find(v)
+            Add edge (u, v) to MST
+            Union(u, v)
+
+    return MST
