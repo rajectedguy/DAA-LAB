@@ -1,0 +1,11 @@
+PRIM(G, V)
+
+Select a starting vertex
+
+while MST has less than (V-1) edges
+    Find the minimum edge connecting
+    MST vertex to non-MST vertex
+
+    Add the edge to MST
+
+return MST
