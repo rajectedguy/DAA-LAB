@@ -1,0 +1,23 @@
+KNAPSACK(W, weight[], profit[], n)
+
+for i = 0 to n
+    K[i][0] = 0
+
+for w = 0 to W
+    K[0][w] = 0
+
+for i = 1 to n
+    for w = 1 to W
+
+        if weight[i] <= w
+            K[i][w] =
+                max(
+                  profit[i] +
+                  K[i-1][w-weight[i]],
+                  K[i-1][w]
+                )
+        else
+            K[i][w] =
+                K[i-1][w]
+
+return K[n][W]
