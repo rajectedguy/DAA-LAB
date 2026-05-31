@@ -1,0 +1,22 @@
+MatrixChainOrder(p, n)
+
+for i = 1 to n-1
+    m[i][i] = 0
+
+for L = 2 to n-1
+    for i = 1 to n-L+1
+
+        j = i + L - 1
+        m[i][j] = ∞
+
+        for k = i to j-1
+
+            q =
+              m[i][k] +
+              m[k+1][j] +
+              p[i-1]*p[k]*p[j]
+
+            if q < m[i][j]
+                m[i][j] = q
+
+return m[1][n-1]
