@@ -1,0 +1,22 @@
+DIJKSTRA(G, source)
+
+for each vertex v
+    distance[v] = ∞
+    visited[v] = false
+
+distance[source] = 0
+
+repeat V times
+    u = vertex with minimum distance
+        among unvisited vertices
+
+    visited[u] = true
+
+    for each neighbor v of u
+        if visited[v] == false and
+           distance[u] + weight(u,v) < distance[v]
+        then
+            distance[v] =
+                distance[u] + weight(u,v)
+
+return distance[]
