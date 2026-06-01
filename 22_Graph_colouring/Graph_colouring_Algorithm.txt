@@ -1,0 +1,25 @@
+GraphColoring(vertex)
+
+    if vertex == V
+        print solution
+        return true
+
+    for color = 1 to m
+        if IsSafe(vertex, color)
+            assign color to vertex
+
+            if GraphColoring(vertex + 1)
+                return true
+
+            remove color (Backtrack)
+
+    return false
+
+
+IsSafe(vertex, color)
+
+    for each adjacent vertex i
+        if graph[vertex][i] == 1 and color[i] == color
+            return false
+
+    return true
