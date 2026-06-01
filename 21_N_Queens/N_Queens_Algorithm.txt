@@ -1,0 +1,29 @@
+NQueens(row, n)
+    if row == n then
+        print solution
+        return
+
+    for col = 0 to n-1 do
+        if IsSafe(row, col) then
+            place queen at (row, col)
+
+            NQueens(row + 1, n)
+
+            remove queen from (row, col)   
+        end if
+    end for
+End
+
+IsSafe(row, col)
+    check all previous rows:
+        if queen exists in same column
+            return false
+
+        if queen exists in left diagonal
+            return false
+
+        if queen exists in right diagonal
+            return false
+
+    return true
+End

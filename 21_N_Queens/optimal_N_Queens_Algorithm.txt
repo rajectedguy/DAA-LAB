@@ -1,0 +1,26 @@
+NQueens(row)
+    if row == N
+        print solution
+        return true
+
+    for col = 0 to N-1
+        if column[col] = false AND
+           diag1[row-col+N-1] = false AND
+           diag2[row+col] = false
+
+            place queen
+
+            column[col] = true
+            diag1[row-col+N-1] = true
+            diag2[row+col] = true
+
+            if NQueens(row+1)
+                return true
+
+            remove queen
+
+            column[col] = false
+            diag1[row-col+N-1] = false
+            diag2[row+col] = false
+
+    return false
