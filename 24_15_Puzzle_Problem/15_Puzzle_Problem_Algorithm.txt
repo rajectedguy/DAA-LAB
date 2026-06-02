@@ -1,0 +1,37 @@
+15-PUZZLE(start, goal)
+
+1. Create OPEN list and CLOSED list.
+2. Insert start state into OPEN.
+3. Compute:
+       f(n) = g(n) + h(n)
+
+   where:
+       g(n) = cost from start
+       h(n) = Manhattan Distance
+
+4. While OPEN is not empty
+
+      current ← state with minimum f(n)
+
+      If current = goal
+            Print solution
+            Stop
+
+      Move current from OPEN to CLOSED
+
+      Generate all possible children
+      (Up, Down, Left, Right)
+
+      For each child
+
+            If child not in CLOSED
+
+                  g(child)=g(current)+1
+                  h(child)=Manhattan(child)
+
+                  f(child)=g+h
+
+                  Insert child into OPEN
+
+5. If OPEN becomes empty
+      No solution exists
