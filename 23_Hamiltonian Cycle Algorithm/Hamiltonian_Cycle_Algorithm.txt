@@ -1,0 +1,31 @@
+Hamiltonian(k)
+
+    if k == n
+        if graph[path[n-1]][path[0]] == 1
+            print path and path[0]
+            return true
+        else
+            return false
+
+    for v = 1 to n-1
+        if IsSafe(v, k)
+            path[k] = v
+
+            if Hamiltonian(k + 1)
+                return true
+
+            path[k] = -1
+
+    return false
+
+
+IsSafe(v, k)
+
+    if graph[path[k-1]][v] == 0
+        return false
+
+    for i = 0 to k-1
+        if path[i] == v
+            return false
+
+    return true
